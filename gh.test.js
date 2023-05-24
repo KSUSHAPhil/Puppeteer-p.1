@@ -21,7 +21,7 @@ describe("Github page tests", () => {
     await firstLink.click();
     await page.waitForSelector('h1');
     const title2 = await page.title();
-    expect(title2).toEqual('GitHub: Where the world builds software · GitHub');
+    expect(title2).toEqual('GitHub for teams · Build like the best teams on the planet · GitHub');
   }, 7000);
 
   test("The first link attribute", async () => {
@@ -35,7 +35,7 @@ describe("Github page tests", () => {
       visible: true,
     });
     const actual = await page.$eval(btnSelector, link => link.textContent);
-    expect(actual).toContain("Sign up for free")
+    expect(actual).toContain('Get started with Team');
   },7000);
 });
 
@@ -43,13 +43,13 @@ describe('my tests', () => {
     test('GitHub Actions Cheat Sheet', async() => {
         await page.goto('https://resources.github.com/actions/github-actions-cheat/');
         const title = await page.title();
-        expect(title).toContain('GitHub Resources - Home');
+        expect(title).toContain('GitHub Actions Cheat Sheet - GitHub Resources');
     }, 7000);
 
     test('pricing', async() => {
         await page.goto('https://github.com/pricing');
         const title = await page.title();
-        expect(title).toContain('GitHub for teams · Build like the best teams on the planet');
+        expect(title).toContain('Pricing · Plans for every developer · GitHub');
     }, 7000);
 
     test('about', async() => {
